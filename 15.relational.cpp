@@ -1,0 +1,39 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class student {
+private:
+    int feet;
+    int inch;
+public:
+    student() {
+        feet = 0;
+        inch = 0;
+    }
+    void gettheheight(int f, int i) {
+        feet = f;
+        inch = i;
+    }
+    int operator > (student s3) {
+        if (feet > s3.feet)
+            return 1;
+        else if (feet == s3.feet && inch > s3.inch)
+            return 1;
+        else
+            return 0;
+    }
+};
+
+int main() {
+    student s1, s2;
+    s1.gettheheight(5, 10);
+    s2.gettheheight(6, 1);
+    if (s1 > s2)
+        cout << "student s1 is taller";
+    else if (s2 > s1)
+        cout << "student s2 is taller";
+    else
+        cout << "both are equal in height";
+    getch();
+}
